@@ -76,7 +76,7 @@ def stocklinebot():
       stock_infor = msg_data.get("message", None)
       msg_data = stock_infor + f"\n data send from linebot{linrbot_index} \n quota_usage: {linebot_quota}"
       # 如果有 msg 參數，觸發 LINE Message API 的 push_message 方法
-      linebots[linrbot_index].push_message('U397f1de6d94d4f1ecd7ac45174f4ef8d', TextSendMessage(text=msg_data))
+      linebots[linrbot_index].push_message('', TextSendMessage(text=msg_data)) #''填入自己的UID
       print(msg_data)
       return "OK"
     else:
